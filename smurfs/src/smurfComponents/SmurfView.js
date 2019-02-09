@@ -16,6 +16,12 @@ class SmurfView extends React.Component{
 
     }
     render(){
+        if (this.props.fetchingSmurfs) {
+            return <div> Loading smurfs...</div>
+        }
+        if (this.props.error) {
+            return <div> Error! {this.props.error}</div>
+        }
         return (
             <SmurfList smurfs={this.props.smurfs}/>
 
