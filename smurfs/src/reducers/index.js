@@ -1,7 +1,7 @@
 /*
   Be sure to import in all of the action types from `../actions`
 */
-import {FETCHING,FETCHING_SUCCESS,FETCHING_FAILURE,ADDING_SUCCESS,ADDING_FAILURE,DELETE_SUCCESS,DELETE_FAILURE } from "../actions"
+import {FETCHING,FETCHING_SUCCESS,FETCHING_FAILURE,ADDING_SUCCESS,ADDING_FAILURE,DELETE_SUCCESS,DELETE_FAILURE,UPDATE_SUCCESS,UPDATE_FAILURE } from "../actions"
 
 const initialState= {
     smurfs: [],
@@ -53,6 +53,18 @@ export  default function reducer (state=initialState,action){
                 ...state, smurfs: [], fetchingSmurfs: false,
                 addingSmurf:false, updatingSmurf: false, deletingSmurf: false, error:action.payload
             }
+
+        case UPDATE_SUCCESS:
+            return {
+                ...state, smurfs: action.payload, fetchingSmurfs: false,
+                addingSmurf:false, updatingSmurf: action.payload, deletingSmurf: true, error:false
+            }
+        case UPDATE_FAILURE:
+            return {
+                ...state, smurfs: [], fetchingSmurfs: false,
+                addingSmurf:false, updatingSmurf: false, deletingSmurf: false, error:action.payload
+            }
+
         default:
             return state
     }

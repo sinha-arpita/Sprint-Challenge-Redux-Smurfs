@@ -13,7 +13,8 @@ export const ADDING_SUCCESS = "ADDING_SUCCESS";
 export const ADDING_FAILURE = "ADDING_FAILURE";
 export const DELETE_SUCCESS = "DELETE_SUCCESS";
 export const DELETE_FAILURE = "DELETE_FAILURE";
-
+export const UPDATE_SUCCESS = "UPDATE_SUCCESS";
+export const UPDATE_FAILURE = "UPDATE_FAILURE";
 
 /*
   For this project you'll need at least 2 action creators for the main portion,
@@ -82,5 +83,26 @@ export function deleteSmurf(id){
             })
 
     }
+
+}
+export function updateSmurf(id,smurf){
+
+
+    console.log("Updating smurf");
+    console.log(smurf);
+
+    return dispatch =>{
+        axios.put ("http://localhost:3333/smurfs/"+id,smurf)
+            .then(res=>{
+                console.log("PUT UPDATE",res)
+             dispatch({type:UPDATE_SUCCESS,payload:res.data})
+            })
+            .catch(error =>{
+                console.log("PUT ERROR",error)
+                dispatch({type:UPDATE_FAILURE,payload:"Smurf not updated"})
+            })
+
+    }
+
 
 }

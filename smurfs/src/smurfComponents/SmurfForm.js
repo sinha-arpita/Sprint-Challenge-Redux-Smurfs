@@ -33,22 +33,24 @@ class SmurfForm extends React.Component{
     render(){
 
         return(
-            <div>
+            <div className="addForm">
 
-                <form>
+                <form className="formInputParent">
 
                     <input type ="text" placeholder="Name" name="inputName"
-                           onChange={this.changeHandler}/>
+                           onChange={this.changeHandler} className="formInput"/>
 
                     <input type ="number" placeholder="Age" name="inputAge"
-                           onChange={this.changeHandler}/>
+                           onChange={this.changeHandler} className="formInput"/>
 
                     <input type ="number" placeholder="Height" name="inputHeight"
-                           onChange={this.changeHandler}/>
+                           onChange={this.changeHandler} className="formInput" />
 
-                    <button onClick={this.clickHandler}>Add Smurf</button>
+
 
                 </form>
+                <div><button onClick={this.clickHandler}>Add Smurf</button>
+                </div>
 
 
 

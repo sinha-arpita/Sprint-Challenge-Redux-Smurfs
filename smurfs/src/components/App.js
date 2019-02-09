@@ -15,6 +15,7 @@ class App extends Component {
                 <h1> WELCOME SMURFS REDUX</h1>
 
                 <SmurfView />
+
                 <SmurfForm/>
             </div>
 
