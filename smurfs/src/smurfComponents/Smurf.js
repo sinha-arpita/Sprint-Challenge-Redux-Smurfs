@@ -13,6 +13,9 @@ class Smurf extends React.Component{
             inputAge  : this.props.smurf.age,
             inputHeight : this.props.smurf.height
         }
+        if (!this.props.smurf.id) {
+            this.props.smurf.id = 0;
+        }
     }
     deleteHandler=()=>{
         this.props.deleteSmurf(this.props.smurf.id)
@@ -37,6 +40,7 @@ class Smurf extends React.Component{
             <button onClick={this.deleteHandler} className="deleteButton">X</button>
             <button onClick={this.updateHandler}  className="updateButton">Update</button>
 
+            
             <div className="each">
                 <div className="inputLabel">Name </div>
                 <input className="inputBox" placeholder={this.props.smurf.name} name="inputName" onChange={this.changeHandler}></input>
