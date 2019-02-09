@@ -29,7 +29,7 @@ export  default function reducer (state=initialState,action){
             }
         case FETCHING_FAILURE:
             return {
-                ...state, smurfs: [], fetchingSmurfs: false,
+                ...state, fetchingSmurfs: false,
                 addingSmurf: false, updatingSmurf: false, deletingSmurf: false, error: action.payload
             }
         case ADDING_SUCCESS:
@@ -39,7 +39,7 @@ export  default function reducer (state=initialState,action){
             }
         case ADDING_FAILURE:
             return {
-                ...state, smurfs: [], fetchingSmurfs: false,
+                ...state,  fetchingSmurfs: false,
                 addingSmurf:false, updatingSmurf: false, deletingSmurf: false, error:action.payload
             }
 
@@ -50,7 +50,7 @@ export  default function reducer (state=initialState,action){
             }
         case DELETE_FAILURE:
             return {
-                ...state, smurfs: [], fetchingSmurfs: false,
+                ...state, fetchingSmurfs: false,
                 addingSmurf:false, updatingSmurf: false, deletingSmurf: false, error:action.payload
             }
 
@@ -61,7 +61,7 @@ export  default function reducer (state=initialState,action){
             }
         case UPDATE_FAILURE:
             return {
-                ...state, smurfs: [], fetchingSmurfs: false,
+                ...state, fetchingSmurfs: false,
                 addingSmurf:false, updatingSmurf: false, deletingSmurf: false, error:action.payload
             }
 

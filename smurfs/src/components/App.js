@@ -12,10 +12,11 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <h1> WELCOME SMURFS REDUX</h1>
+                <h1> ALL THE SMURFS</h1>
 
                 <SmurfView />
 
+                <h2> Add a new smurf</h2>
                 <SmurfForm/>
             </div>
 
